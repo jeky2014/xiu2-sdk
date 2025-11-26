@@ -1,0 +1,5 @@
+com/mengwangbao/xiu2/register/RegisterSDK.class
+com/mengwangbao/xiu2/util/Ed25519Utils.class
+com/mengwangbao/xiu2/util/SignatureParamBuilder.class
+com/mengwangbao/xiu2/register/DeviceRegisterRequest.class
+com/mengwangbao/xiu2/util/Ed25519Utils$KeyPairResult.class
