@@ -1,5 +1,6 @@
 package com.mengwangbao.xiu2.util;
 
+import org.apache.commons.codec.binary.Base64;
 import org.bouncycastle.asn1.*;
 import org.bouncycastle.asn1.edec.EdECObjectIdentifiers;
 import org.bouncycastle.asn1.pkcs.PrivateKeyInfo;
@@ -56,7 +57,8 @@ public class Ed25519Utils {
         signer.update(message, 0, message.length);
         byte[] signatureBytes = signer.generateSignature();
 
-        return java.util.Base64.getEncoder().encodeToString(signatureBytes);
+//        return java.util.Base64.getEncoder().encodeToString(signatureBytes);
+        return Base64.encodeBase64String(signatureBytes);
     }
 
     /**

@@ -1,6 +1,7 @@
 package com.mengwangbao.xiu2.register;
 
 import com.mengwangbao.xiu2.util.Ed25519Utils;
+import org.junit.Test;
 
 /**
  * RegisterSDK使用示例类
@@ -77,6 +78,18 @@ public class RegisterSDKExample {
             System.err.println("生成签名数据或验证签名失败!");
             e.printStackTrace();
         }
+    }
+
+    @Test
+    public void test_20251212() throws Exception {
+        RegisterSDK registerSDK = new RegisterSDK();
+        String signString = "device_sn=GV9YYBUSLS2DUWLADBBA&hardware_version=1.0.0&iccid=89860123456789012345&imei=123456789012345&mac=00:11:22:33:44:55&nonce=dCdAe7b2fFF46aA7d4695c8E8d3bb2fA&schema_version=1.0&software_version=1.0.0&timestamp=1765506309748";
+        String privatePem = "-----BEGIN PRIVATE KEY-----\n" +
+                "MC4CAQAwBQYDK2VwBCIEIE6L4u4rSEYsgw2Y/Sck0z5TTX2nZ15FpkBAuTYpzAfC\n" +
+                "-----END PRIVATE KEY-----";
+        String signature = registerSDK.generateSignature(signString, privatePem);
+        System.out.println("\n5. 生成的签名:");
+        System.out.println(signature);
     }
 
 }
